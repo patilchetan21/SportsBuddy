@@ -21,24 +21,15 @@ const Header = () => {
 		<header>
 			<Navbar
 				className='text-uppercase'
-				bg='primary'
+				bg='dark'
 				variant='dark'
 				expand='lg'
 				collapseOnSelect
 			>
 				<Container>
-					{/* Melvin Kisten */}
-					<a
-						rel='noopener noreferrer'
-						href='https://github.com/iammelvink'
-						target='_blank'
-						className='melvin-kisten'
-					>
-						<i className='fas fa-user-circle'></i> Melvin Kisten Github
-					</a>
 					{/* Home */}
 					<LinkContainer to='/'>
-						<Navbar.Brand>React E-Commerce</Navbar.Brand>
+						<Navbar.Brand>SportsBuddy</Navbar.Brand>
 					</LinkContainer>
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav'>
@@ -51,15 +42,20 @@ const Header = () => {
 								</Nav.Link>
 							</LinkContainer>
 							{userInfo ? (
+								<>
+								{/* <LinkContainer to='/profile'>
+									<Nav.Link><i class="fa fa-user" aria-hidden="true"></i> Profile</Nav.Link>
+								</LinkContainer> */}
 								<NavDropdown title={userInfo.name} id='username'>
-									<LinkContainer to='/profile'>
-										<NavDropdown.Item>Profile</NavDropdown.Item>
-									</LinkContainer>
+								<LinkContainer to='/profile'>
+									<NavDropdown.Item>Profile</NavDropdown.Item>
+								</LinkContainer>
 									{/* Logout */}
 									<NavDropdown.Item onClick={logoutHandler}>
 										Logout
 									</NavDropdown.Item>
 								</NavDropdown>
+								</>
 							) : (
 								// Login
 								<LinkContainer to='/login'>
